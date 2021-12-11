@@ -35,8 +35,11 @@
             <!-- Horizontal menu content-->
             <div class="navbar-container main-menu-content" data-menu="menu-container">
                 <!-- include ../../../includes/mixins-->
-                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="index.html" data-bs-toggle="dropdown"><i data-feather="home"></i><span data-i18n="Dashboards">Reports</span></a>
+
+                <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation"> 
+                    <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="/home" data-bs-toggle="" data-i18n="Home"><i data-feather="home"></i><span data-i18n="Home">Home</span></a>
+                    </li>
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link d-flex align-items-center" href="index.html" data-bs-toggle="dropdown"><i data-feather='activity'></i><span data-i18n="Dashboards">Reports</span></a>
                         <ul class="dropdown-menu">
                             <li data-menu=""><a class="dropdown-item d-flex align-items-center" href="/tripReport" data-bs-toggle="" data-i18n="Analytics"><i data-feather="activity"></i><span data-i18n="Analytics">Trip Report</span><span class="badge badge-light-warning rounded-pill ms-auto me-1">{{$trips}}</span></a>
                             </li>
