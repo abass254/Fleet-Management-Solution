@@ -9,7 +9,7 @@
             </div>
             <div class="content-body">
                 <div class="row">
-                    <div class="col-6 p-4 mx-auto my-auto">
+                    <div class="col-md-6 p-4 mx-auto my-auto">
                         
                         <div class="card">
                                 <div class="card-header">

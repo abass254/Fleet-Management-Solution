@@ -20,7 +20,7 @@
             </div>
             <div class="content-body">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-12">
                         <table class="table table-responsive">
                             <thead>
                                 <tr>
@@ -34,7 +34,7 @@
                             </thead>
                             <tbody>
                                 @if(count($trips) < 1)
-                                    <tr class="mx-auto"><td><b><center>No On Going Trips So Far</center></b></td></tr>
+                                    <tr class="mx-auto"><td><b><center>-----</center></b></td></tr>
                                 @else
                                 @foreach($trips as $key => $veh)
                                 <tr>

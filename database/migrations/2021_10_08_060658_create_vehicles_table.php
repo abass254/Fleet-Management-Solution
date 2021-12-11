@@ -9,25 +9,28 @@ class CreateVehiclesTable extends Migration
     /**id                                    
 
      * Run the migrations.
-     *
+     *                                  
      * @return void
      */
+
     public function up()
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->string('brand');
-            $table->string('model');
-            $table->string('vehicle_type');
-            $table->string('purchase_date');
-            $table->string('chassis_no');
-            $table->string('engine_no');
-            $table->string('plate_no');
-            $table->string('insurance_company');
-            $table->string('policy_no');
-            $table->string('colour');
+            $table->string('name');
+            $table->string('year');
+            $table->string('selling_price');
+            $table->string('km_driven');
+            $table->string('fuel');
+            $table->string('seller_type');
+            $table->string('transmission');
+            $table->string('owner');
+            $table->string('mileage');
+            $table->string('engine');
+            $table->string('max_power');
+            $table->string('torque');
+            $table->string('seats');
             $table->string('image');
-            $table->string('status');
             $table->timestamps();
         });
     }

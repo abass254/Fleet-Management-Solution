@@ -24,15 +24,15 @@
                         <div class="col-md-8 col-12 mx-auto">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Please the inputs with (*)</h4>
+                                    <h4 class="card-title">Please the inputs with<b class="text-danger">*</b></h4>
                                 </div>
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('issue_asset.store')}}" class="form form-vertical">
                                         @csrf
                                         <div class="row">
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Asset Name*</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Asset Name<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
                                                         <select class="form-control" id="item" name="item">
@@ -44,9 +44,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Staff</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Staff<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
                                                         <select class="form-control" id="staff" name="staff">
@@ -58,18 +58,18 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Issue Date *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Issue Date<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
                                                         <input type="date" id="date_issued" class="form-control" name="date_issued" placeholder="Purchase Date" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Comment *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Comment<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
                                                         <textarea class="form-control" name="comments"></textarea>

@@ -20,12 +20,12 @@
             </div>
             <div class="content-body">
                 <div class="row">
-                    <div class="col-xl-4 col-12">
+                    <div class="col-xl-4 col-md-12">
                         <table class="table table-responsive">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Vehicle Model</th>
+                                    <th>Vehicle Name</th>
                                     <th>Total Trip</th>
                                 </tr>
                             </thead>
@@ -33,7 +33,7 @@
                                 @foreach($trips_per_car as $key => $veh)
                                 <tr>
                                     <td>{{ $key +1 }}</td>
-                                    <td>{{ $veh->vehice->model }}</td>
+                                    <td>{{ $veh->vehice->name }}</td>
                                     <td><b>{{ $veh->total }}</b></td>
                                 </tr>
                                 @endforeach
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </div-->
-                    <div class="col-xl-8 col-12">
+                    <div class="col-xl-8 col-md-6">
                       <div id="donutchart" style="width: 900px; height: 500px;"></div>
                     </div>
 

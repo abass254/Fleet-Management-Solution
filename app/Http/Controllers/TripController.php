@@ -226,7 +226,7 @@ class TripController extends Controller
         $trip_data = "";
 
         foreach($trips_per_car as $trip){
-            $trip_data.=  "['".$trip->vehice->model."',    ".$trip->total."],";
+            $trip_data.=  "['".$trip->vehice->name."',    ".$trip->total."],";
         }
 
         $chartData = $trip_data;

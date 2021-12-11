@@ -12,7 +12,7 @@ class Vehicle extends Model
     //id                                     
 
 
-    protected $fillable = ['brand','model','vehicle_type','purchase_date','chassis_no','engine_no','plate_no','insurance_company','policy_no','colour','image',];
+    protected $fillable = ['name', 'year'  ,  'selling_price',   'km_driven' ,  'fuel'   , 'seller_type', 'transmission'  ,  'owner'  , 'mileage' ,'engine' , 'max_power'  , 'torque'  ,'seats'  , 'image', 'colour'];
 
     public function trip(){
 
@@ -21,7 +21,7 @@ class Vehicle extends Model
 
     public function veh_type(){
 
-        return $this->belongsTo(Type::class, 'vehicle_type');
+        return $this->belongsTo('App\Models\Type', 'vehicle_type');
     }
 
 

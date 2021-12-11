@@ -45,119 +45,160 @@
                                     <form method="POST" action="{{ route('vehicle.store')}}" class="form form-vertical" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
-                                            <div class="col-6">
+                                            <!-- 'name', 'year' ,  'selling_price',   'km_driven' ,      , 'mileage' ,'engine' , 'max_power'  , 'torque'  ,'seats'  , 'image', 'colour' -->
+                                            
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Brand *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Vehicle Name <b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <select class="form-control" id="brand" name="brand">
-                                                            <option selected="" readonly="">--BRAND--</option>
-                                                            <option value="1" >Mercedes</option>
-                                                            <option value="2" >Toyota</option>
-                                                            <option value="3" >Scania</option>
-                                                            <option value="4" >Isuzu</option>
-                                                            <option value="5" >BMW</option>
-                                                            <option value="6" >Nissan</option>
-                                                            <option value="7" >Subaru</option>
-                                                        </select>
+                                                        <input type="text" id="model" class="form-control" name="name" placeholder="Name" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Vehicle Type *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Year of Manufacture <b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <select class="form-control" id="vehicle_type" name="vehicle_type">
-                                                            <option selected="" readonly="">--TYPE--</option>
-                                                            <option value="1" >Truck</option>
-                                                            <option value="2" >SUV</option>
-                                                            <option value="3" >Saloon</option>
-                                                        </select>
+                                                        <input type="text" id="plate_no" class="form-control" name="year" placeholder="2000-3000" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Model *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Buying Price<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="model" class="form-control" name="model" placeholder="Model" />
+                                                        <input type="text" id="chassis_no" class="form-control" name="selling_price" placeholder="Chassis No" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Number Plate *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>KM Driven<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="plate_no" class="form-control" name="plate_no" placeholder="Plate No" />
+                                                        <input type="text" id="engine_no" class="form-control" name="km_driven" placeholder="Engine No" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Chassis No *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Mileage<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="chassis_no" class="form-control" name="chassis_no" placeholder="Chassis No" />
+                                                        <input type="text" id="insurance_company" class="form-control" name="mileage" placeholder="Insurance Company" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Engine No *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Engine<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="engine_no" class="form-control" name="engine_no" placeholder="Engine No" />
+                                                        <input type="text" id="policy_no" class="form-control" name="engine" placeholder="cc" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Insurance Company *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Torque<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="insurance_company" class="form-control" name="insurance_company" placeholder="Insurance Company" />
+                                                        <input type="text" id="policy_no" class="form-control" name="torque" placeholder="Torque" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Policy No *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>No of Seats<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="text" id="policy_no" class="form-control" name="policy_no" placeholder="Policy No" />
+                                                        <input type="text" id="policy_no" class="form-control" name="seats" placeholder="No of Seats" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Purchase Date *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Max Power<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
-                                                        <input type="date" id="purchase_date" class="form-control" name="purchase_date" placeholder="Purchase Date" />
+                                                        <input type="text" id="purchase_date" class="form-control" name="max_power" placeholder="Max-Power" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Colour *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Colour<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
                                                         <input type="text" id="colour" class="form-control" name="colour" placeholder="Colour" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            
+                                            <div class="col-lg-3 col-md-6">
                                                 <div class="mb-1">
-                                                    <label class="form-label" for="first-name-icon"><strong>Image *</strong></label>
+                                                    <label class="form-label" for="first-name-icon"><strong>Transmission<b class="text-danger">*</b></strong></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text"><i data-feather="user"></i></span>
+                                                        <select class="form-control" id="brand" name="brand">
+                                                            <option selected="" readonly="">--TRANSMISSION--</option>
+                                                            <option value="1" >Automatic</option>
+                                                            <option value="2" >Manual</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-icon"><strong>Purchase Type<b class="text-danger">*</b></strong></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text"><i data-feather="user"></i></span>
+                                                        <select class="form-control" id="brand" name="brand">
+                                                            <option selected="" readonly="">--PURCHASE-TYPE--</option>
+                                                            <option value="1" >Dealer</option>
+                                                            <option value="2" >Individual</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-icon"><strong>Ownership<b class="text-danger">*</b></strong></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text"><i data-feather="user"></i></span>
+                                                        <select class="form-control" id="vehicle_type" name="vehicle_type">
+                                                            <option selected="" readonly="">--OWNERSHIP--</option>
+                                                            <option value="1" >First Hand</option>
+                                                            <option value="2" >Second Hand</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-6">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-icon"><strong>Fuel Type<b class="text-danger">*</b></strong></label>
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text"><i data-feather="user"></i></span>
+                                                        <select class="form-control" id="vehicle_type" name="vehicle_type">
+                                                            <option selected="" readonly="">--FUEL-TYPE--</option>
+                                                            <option value="1" >Diesel </option>
+                                                            <option value="2" >Petrol</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-name-icon"><strong>Image<b class="text-danger">*</b></strong></label>
                                                     <div class="input-group input-group-merge">
                                                         <span class="input-group-text"><i data-feather="user"></i></span>
                                                         <input type="file" id="image" class="form-control" name="image" placeholder="Model" />
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>    
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary me-1">Submit</button>
                                                 <button type="reset" class="btn btn-outline-secondary">Reset</button>

@@ -25,7 +25,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Asset Code</th>
+                                    <th>Current Owner</th>
                                     <th>Asset Name</th>
                                 </tr>
                             </thead>

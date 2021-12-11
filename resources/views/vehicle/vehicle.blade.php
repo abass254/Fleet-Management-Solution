@@ -18,6 +18,7 @@
                     <a href="/vehicle/create" class="btn btn-info">Add New Vehicle</a>
                 </div>
             </div>
+             <!--  , ''  ,  'selling_price',   'km_driven' ,  'fuel'   , 'seller_type', 'transmission'  ,  'owner'  , 'mileage' ,'engine' , 'max_power'  , 'torque'  ,'seats'  , 'image', '' -->
             <div class="content-body">
                 <div class="row">
                     <div class="col-12">
@@ -25,8 +26,8 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Vehicle Model</th>
-                                    <th>Plate Number</th>
+                                    <th>Vehicle Name</th>
+                                    <th>Year of Manufacture</th>
                                     <th>Colour</th>
                                     <th>Status</th>
                                     <th></th>
@@ -36,8 +37,8 @@
                                 @foreach($vehicles as $key => $veh)
                                 <tr>
                                     <td>{{ $key +1 }}</td>
-                                    <td>{{ $veh->model }}</td>
-                                    <td>{{ $veh->plate_no }}</td>
+                                    <td>{{ $veh->name }}</td>
+                                    <td>{{ $veh->year }}</td>
                                     <td>{{ $veh->colour }}</td>
                                     @if($veh->status == 0)
                                     <td><span class="badge rounded-pill badge-light-warning me-1">Pending</span></td>
@@ -70,6 +71,8 @@
 
 @foreach($vehicles as $veh)
               <!-- Modal -->
+
+              <!--  , ''  ,  '',   '' ,  'fuel'   , 'seller_type', 'transmission'  ,  'owner'  , 'mileage' ,'engine' , 'max_power'  , 'torque'  ,'seats'  , 'image', '' -->
 <div class="modal fade text-start" id="defaultSize{{ $veh->id }}" tabindex="-1" aria-labelledby="myModalLabel18" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
   <div class="modal-content">
@@ -81,50 +84,80 @@
       <table class="table table-responsive table-bordered">
         <tr>
             <td style="width:50%;background-color: #e8e8e8;">
-                <strong> Vehicle Type </strong>
+                <strong> Buying Price </strong>
             </td>
-            <td style="width:50%" id="VehicleType">{{$veh->veh_type->type}}</td>
+            <td style="width:50%" id="VehicleType">{{ $veh->selling_price }}</td>
         </tr>
 
         <tr>
             <td style="width:50%;background-color: #e8e8e8;">
-                <strong> Brand </strong>
+                <strong> KM Driven </strong>
             </td>
-            <td style="width:50%" id="VehicleName">{{$veh->brd->brand}}</td>
+            <td style="width:50%" id="VehicleName">{{$veh->km_driven}}</td>
         </tr>
 
         <tr>
             <td style="width:50%;background-color: #e8e8e8;">
-                <strong> Make/Model </strong>
+                <strong> Fuel </strong>
             </td>
-            <td style="width:50%" id="MakeModel">{{$veh->model}}</td>
+            <td style="width:50%" id="MakeModel">{{$veh->fuel}}</td>
         </tr>
 
         <tr>
             <td style="width:50%;background-color: #e8e8e8;">
-                <strong> Purchase Date </strong>
+                <strong> Seller Type </strong>
             </td>
-            <td style="width:50%" id="YearofManufacture">{{$veh->purchase_date}}</td>
+            <td style="width:50%" id="YearofManufacture">{{$veh->seller_type}}</td>
         </tr> 
 
         <tr>
             <td style="width:50%;background-color: #e8e8e8;">
-                <strong> Registration Number </strong>
+                <strong> Transmission </strong>
             </td>
-            <td style="width:50%" id="RegistrationNumber">{{$veh->plate_no}}</td>
+            <td style="width:50%" id="RegistrationNumber">{{$veh->transmission}}</td>
         </tr>
         <tr>
             <td style="width:50%;background-color: #e8e8e8;">
-                <strong> Engine Number </strong>
+                <strong> Engine </strong>
             </td>
-            <td style="width:50%" id="EngineNumber">{{$veh->engine_no}}</td>
+            <td style="width:50%" id="EngineNumber">{{$veh->engine}}</td>
         </tr>
 
         <tr>
             <td style="width:50%;background-color: #e8e8e8;">
-                <strong> Chassis Number </strong>
+                <strong> Owner  </strong>
             </td>
-            <td style="width:50%" id="ChassisNumber">{{$veh->chassis_no}}</td>
+            <td style="width:50%" id="ChassisNumber">{{$veh->owner}}</td>
+        </tr> 
+        <tr>
+            <td style="width:50%;background-color: #e8e8e8;">
+                <strong> Mileage  </strong>
+            </td>
+            <td style="width:50%" id="ChassisNumber">{{$veh->mileage}}</td>
+        </tr>
+         <tr>
+            <td style="width:50%;background-color: #e8e8e8;">
+                <strong> Max Power  </strong>
+            </td>
+            <td style="width:50%" id="ChassisNumber">{{$veh->max_power}}</td>
+        </tr>
+         <tr>
+            <td style="width:50%;background-color: #e8e8e8;">
+                <strong> Owner  </strong>
+            </td>
+            <td style="width:50%" id="ChassisNumber">{{$veh->owner}}</td>
+        </tr>
+         <tr>
+            <td style="width:50%;background-color: #e8e8e8;">
+                <strong> Torques  </strong>
+            </td>
+            <td style="width:50%" id="ChassisNumber">{{$veh->torque}}</td>
+        </tr>
+         <tr>
+            <td style="width:50%;background-color: #e8e8e8;">
+                <strong> Seats  </strong>
+            </td>
+            <td style="width:50%" id="ChassisNumber">{{$veh->seats}}</td>
         </tr>
         <tr>
             <td style="width:50%;background-color: #e8e8e8;">

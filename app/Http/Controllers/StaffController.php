@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Staff;
+use App\Models\User;
+use Hash;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class StaffController extends Controller
@@ -17,7 +19,7 @@ class StaffController extends Controller
     {
         //'full_name', 'contact', 'role', 'status', 'gender'
 
-        $staffs = Staff::latest()->get();
+        $staffs = Staff::latest()->with('rolee')->get();
 
         return view('view_staffs', compact('staffs'));
     }
@@ -51,6 +53,16 @@ class StaffController extends Controller
         $staff->gender = $request->gender;
         $staff->status = 1;
         $staff->save();
+
+        $user = new User();
+        $user->name = $request->full_name;
+        $user->contact = $request->contact;
+        $user->role = $request->role;
+        $user->gender = $request->gender;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->contact);
+        $user->save();
+
 
         Alert::success('Staff added successfully');
 

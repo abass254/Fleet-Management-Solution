@@ -19,7 +19,7 @@ class VehicleController extends Controller
         //
 
 
-        $vehicles = Vehicle::latest()->get();
+        $vehicles = Vehicle::get();
 
         return view('vehicle.vehicle', compact('vehicles'));
     }
@@ -44,30 +44,43 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
+      
 
             $request->validate([
-                'brand' => 'required',
-                'model' => 'required',
-                'vehicle_type' => 'required',
-                'purchase_date' => 'required',
-                'chassis_no' => 'required',
-                'engine_no' => 'required',
-                'plate_no' => 'required',
-                'insurance_company' => 'required',
-                'policy_no' => 'required',
-                'colour' => 'required',            
+                'name' => 'required',
+                'year' => 'required',
+                'selling_price' => 'required',
+                'km_driven' => 'required',
+                'fuel' => 'required',
+                'engine' => 'required',
+                'seller_type' => 'required',
+                'transmission' => 'required',
+                'owner' => 'required',
+                'colour' => 'required',
+                'mileage' => 'required',
+                'max_power' => 'required',       
+                'torque' => 'required',       
+                'seats' => 'required',       
+                'colour' => 'required',
             ]);
 
+            // '', ''  ,  '',   '' ,  ''   , '', ''  ,  ''  , '' ,'' , ''  , ''  ,''  , 'image', ''
+            // '', ''  ,  '',   '' ,  ''   , '', ''  ,  ''  , '' ,'' , ''  , ''  ,''  , 'image', ''
+
             $vehicle = new Vehicle();
-            $vehicle->brand = $request->brand;
-            $vehicle->model = $request->model;
-            $vehicle->vehicle_type = $request->vehicle_type;
-            $vehicle->purchase_date = $request->purchase_date;
-            $vehicle->chassis_no = $request->chassis_no;
-            $vehicle->engine_no = $request->engine_no;
-            $vehicle->plate_no = $request->plate_no;
-            $vehicle->insurance_company = $request->insurance_company;
-            $vehicle->policy_no = $request->policy_no;
+            $vehicle->name = $request->name;
+            $vehicle->year = $request->year;
+            $vehicle->selling_price = $request->selling_price;
+            $vehicle->km_driven = $request->km_driven;
+            $vehicle->fuel = $request->fuel;
+            $vehicle->seller_type = $request->seller_type;
+            $vehicle->transmission = $request->transmission;
+            $vehicle->owner = $request->owner;
+            $vehicle->mileage = $request->mileage;
+            $vehicle->engine = $request->engine;          
+            $vehicle->max_power = $request->max_power;
+            $vehicle->torque = $request->torque;
+            $vehicle->seats = $request->seats;
             $vehicle->colour = $request->colour;
             $vehicle->status = 0;
 
@@ -75,7 +88,7 @@ class VehicleController extends Controller
 
                 $file = $request->file('image');
                 $ext = $file->guessExtension();
-                $file_name = time().'_'. $request->model . '.' . $ext;
+                $file_name = time().'_'. $request->name . '.' . $ext;
                 $file->move('images/', $file_name);
                 $vehicle->image = $file_name;
 
@@ -153,34 +166,52 @@ class VehicleController extends Controller
 
         $vehicle = Vehicle::FindOrFail($id);
 
-        $vehicle->brand = $request->brand;
-        $vehicle->model = $request->model;
-        $vehicle->vehicle_type = $request->vehicle_type;
-        $vehicle->purchase_date = $request->purchase_date;
-        $vehicle->chassis_no = $request->chassis_no;
-        $vehicle->engine_no = $request->engine_no;
-        $vehicle->plate_no = $request->plate_no;
-        $vehicle->insurance_company = $request->insurance_company;
-        $vehicle->policy_no = $request->policy_no;
-        $vehicle->colour = $request->colour;
-        $vehicle->status = 1;
+        $vehicle->name = $request->name;
+            $vehicle->year = $request->year;
+            $vehicle->selling_price = $request->selling_price;
+            $vehicle->km_driven = $request->km_driven;
+            $vehicle->fuel = $request->fuel;
+            $vehicle->seller_type = $request->seller_type;
+            $vehicle->transmission = $request->transmission;
+            $vehicle->owner = $request->owner;
+            $vehicle->mileage = $request->mileage;
+            $vehicle->engine = $request->engine;          
+            $vehicle->max_power = $request->max_power;
+            $vehicle->torque = $request->torque;
+            $vehicle->seats = $request->seats;
+            $vehicle->colour = $request->colour;
+            $vehicle->status = 0;
 
-        if($request->hasFile('image')){
+            if($request->hasFile('image')){
 
-            $file = $request->file('image');
-            $ext = $file->guessExtension();
-            $file_name = time().'_'. $request->model . '.' . $ext;
-            $file->move('images/', $file_name);
-            $vehicle->image = $file_name;
+                $file = $request->file('image');
+                $ext = $file->guessExtension();
+                $file_name = time().'_'. $request->model . '.' . $ext;
+                $file->move('images/', $file_name);
+                $vehicle->image = $file_name;
+
+               
+
+            }
+
+            $res = $vehicle->save();
+
+            if(empty($res)){
 
 
+                Alert::error('Vehicle not updated. Please check your inputs!!!');
 
-        }
+                return redirect()->back();
+                
+                
+            }
 
-        $vehicle->save();
+            else{
 
-        return redirect()->back()->with('success', 'Successfully updated');
+                Alert::success('Vehicle updated successfully!!!');
 
+                return redirect()->back();
+            }
     }
 
     /**

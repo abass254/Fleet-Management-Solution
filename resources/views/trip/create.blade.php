@@ -30,7 +30,7 @@
                                     <form method="POST" action="{{ route('trip.store')}}" class="form form-vertical">
                                         @csrf
                                         <div class="row">
-                                            <div class="col-12">
+                                            <div class="col-md-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="first-name-icon"><strong>Vehicle Name *</strong></label>
                                                     <div class="input-group input-group-merge">
@@ -38,13 +38,13 @@
                                                         <select class="form-control" id="vehicle" name="vehicle">
                                                             <option selected="" readonly="">--VEHICLE NAME--</option>
                                                             @foreach($vehicles as $veh)
-                                                            <option value="{{$veh->id}}">{{$veh->model}}</option>
+                                                            <option value="{{$veh->id}}">{{$veh->name}}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="first-name-icon"><strong>From</strong></label>
                                                     <div class="input-group input-group-merge">
@@ -58,7 +58,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="first-name-icon"><strong>To</strong></label>
                                                     <select class="form-control" id="driver" name="to">
@@ -69,7 +69,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="first-name-icon"><strong>Date of Trip *</strong></label>
                                                     <div class="input-group input-group-merge">
@@ -78,7 +78,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="first-name-icon"><strong>Returning Date *</strong></label>
                                                     <div class="input-group input-group-merge">
@@ -87,7 +87,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-md-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="first-name-icon"><strong>Purpose of the Trip *</strong></label>
                                                     <div class="input-group input-group-merge">

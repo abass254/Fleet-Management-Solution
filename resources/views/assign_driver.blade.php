@@ -38,7 +38,7 @@
                                                         <select class="form-control" id="vehicle" name="vehicle">
                                                             <option selected="" readonly="">--VEHICLE NAME--</option>
                                                             @foreach($vehicles as $veh)
-                                                            <option value="{{$veh->id}}">{{$veh->model}}</option>
+                                                            <option value="{{$veh->id}}">{{$veh->name}}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>

@@ -42,7 +42,7 @@
                                     <td>{{ $key +1 }}</td>
                                     <td>{{ $veh->full_name }}</td>
                                     <td>{{ $veh->contact }}</td>
-                                    <td>{{ $veh->rolee->name }}</td>
+                                    <td>{{ $veh->rolee->name ?? 'Not Assigned' }}</td>
                                     <td>{{ $veh->gender }}</td>
                                     @if($veh->status == 1)
                                     <td><span class="badge rounded-pill badge-light-warning me-1">Available</span></td>
